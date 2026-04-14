@@ -7,6 +7,12 @@ interface LoadingScreenProps {
   onComplete: () => void;
 }
 
+// Ajustes rápidos para edición manual:
+// - Subí o bajá estos valores para mover el porcentaje de carga.
+// - Ejemplo: "64%" lo baja más que "60%".
+const LOADING_PERCENT_TOP_MOBILE = '64%';
+const LOADING_PERCENT_TOP_DESKTOP = '62%';
+
 export function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [percent, setPercent] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
@@ -219,7 +225,28 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
           {/* Overlay del porcentaje debajo de la taza (posicionado relativo al centro) */}
           <div className="absolute inset-0 z-30 pointer-events-none">
-            <div className="absolute left-1/2 top-[58%] md:top-[58%] -translate-x-1/2 text-center pointer-events-none">
+            <div
+              className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none md:hidden"
+              style={{
+                top: LOADING_PERCENT_TOP_MOBILE,
+              }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+              >
+                <span className="font-serif text-4xl italic text-white opacity-95">
+                  {percent}%
+                </span>
+              </motion.div>
+            </div>
+            <div
+              className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none max-md:hidden"
+              style={{
+                top: LOADING_PERCENT_TOP_DESKTOP,
+              }}
+            >
               <motion.div
                 initial={{ opacity: 0, y: -6 }}
                 animate={{ opacity: 1, y: 0 }}

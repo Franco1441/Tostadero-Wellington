@@ -27,6 +27,12 @@ const OPTIONS = [
   },
 ] as const;
 
+// Ajuste manual rápido de la taza en bienvenida:
+// - Estos valores están +50% vs el tamaño anterior.
+// - Cambiá estos números para agrandar/chicar sin tocar el JSX de abajo.
+const WELCOME_CUP_SIZE_CLASS =
+  'max-h-[34.5svh] max-w-[17.25rem] md:max-h-[54svh] md:max-w-[27rem]';
+
 export function WelcomeScreen({ onSelectMode }: WelcomeScreenProps) {
   return (
     <motion.div
@@ -78,7 +84,7 @@ export function WelcomeScreen({ onSelectMode }: WelcomeScreenProps) {
               width={320}
               height={360}
               priority
-              className="h-auto max-h-[23svh] w-full max-w-[11.5rem] object-contain drop-shadow-[0_20px_36px_rgba(0,0,0,0.18)] md:max-h-[36svh] md:max-w-[18rem]"
+              className={`h-auto w-full object-contain drop-shadow-[0_20px_36px_rgba(0,0,0,0.18)] ${WELCOME_CUP_SIZE_CLASS}`}
             />
           </motion.div>
         </motion.div>
