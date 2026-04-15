@@ -60,8 +60,6 @@ npm run dev
 
 ## Documentacion adicional
 - `MERCADOPAGO_MIGRATION.md`
-- `docs/mercadopago-setup.md`
-- `docs/testing-mercadopago.md`
 
 ## Autor
 Desarrollado por Franco Rotta.
