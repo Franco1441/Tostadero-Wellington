@@ -59,7 +59,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Macchiato',
     price: 4000,
     category: 'con-leche',
-    imagePath: '/products/espresso.png',
+    imagePath: '/products/macchiato.png',
     description: 'Espresso con espuma de leche (sabor fuerte).',
     badge: 'TAZA S',
   },
@@ -69,7 +69,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Cortado',
     price: 6000,
     category: 'con-leche',
-    imagePath: '/products/espresso.png',
+    imagePath: '/products/cortado.png',
     description: 'Espresso con un poco de leche.',
     badge: 'TAZA M',
   },
@@ -79,7 +79,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Flat White',
     price: 6000,
     category: 'con-leche',
-    imagePath: '/products/flat-white.png',
+    imagePath: '/products/flatwhite.png',
     description: 'Espresso con leche texturizada (el famoso café con leche).',
     badge: 'TAZA L',
   },
@@ -99,7 +99,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Capuccino',
     price: 6000,
     category: 'con-leche',
-    imagePath: '/products/latte.png',
+    imagePath: '/products/capuccino.png',
     description: 'Latte con cacao y canela.',
     badge: 'TAZA XL',
   },
@@ -111,7 +111,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Machiatto Frío',
     price: 7500,
     category: 'frios',
-    imagePath: '/products/iced-latte.png',
+    imagePath: '/products/iced latte.png',
     description: 'Shot de espresso doble, hielo, shot de sirope de maple y leche espumada.',
   },
   {
@@ -120,7 +120,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Naranja',
     price: 7500,
     category: 'frios',
-    imagePath: '/products/blanco-naranja.png',
+    imagePath: '/products/Latte naranja.png',
     description: 'Doble shot de naranja y chocolate blanco, hielo, doble shot de espresso y leche espumada.',
   },
   {
@@ -129,7 +129,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Pistacho',
     price: 7500,
     category: 'frios',
-    imagePath: '/products/pistacho.png',
+    imagePath: '/products/Latte pistacho.png',
     description: 'Doble shot de pistacho y chocolate blanco, hielo, doble shot de espresso y leche espumada.',
   },
   {
@@ -138,7 +138,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Nitrogenado',
     price: 5000,
     category: 'frios',
-    imagePath: '/products/cold-brew.png',
+    imagePath: '/products/Nitrogenado.png',
     description: 'Americano nitrogenado frío.',
   },
   {
@@ -147,7 +147,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Tonic',
     price: 6000,
     category: 'frios',
-    imagePath: '/products/tonic.png',
+    imagePath: '/products/Cafe Tonic.png',
     description: 'Hielo, espresso doble y tónica Schweppes.',
   },
 
@@ -158,7 +158,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Submarino',
     price: 5000,
     category: 'sin-cafe',
-    imagePath: '/products/mocha.png',
+    imagePath: '/products/submarino.png',
     description: 'Barrita de chocolate Águila, leche espumada caliente y decoración de cacao.',
   },
   {
@@ -167,6 +167,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Chocolatada',
     price: 4000,
     category: 'sin-cafe',
+    imagePath: '/products/chocolatada.png',
     description: 'Cacao y leche espumada, puede ser fría.',
   },
   {
@@ -175,6 +176,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Caliente',
     price: 4500,
     category: 'sin-cafe',
+    imagePath: '/products/te.png',
     description: 'Té alemán, frío o caliente.',
   },
   {
@@ -183,6 +185,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Frío',
     price: 5000,
     category: 'sin-cafe',
+    imagePath: '/products/te.png',
     description: 'Té alemán, frío o caliente.',
   },
 
