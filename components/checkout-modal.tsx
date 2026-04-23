@@ -3,6 +3,7 @@
 import { useCallback, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, ExternalLink, X, ShoppingBag, CreditCard, ChevronLeft } from 'lucide-react';
+import Image from 'next/image';
 import { useCartStore } from '@/lib/cart-store';
 import { formatPrice } from '@/lib/menu-data';
 import { startMPCheckout } from '@/app/actions/mercadopago';
@@ -328,7 +329,15 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                     <>
                       <div className="rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 p-5">
                         <div className="flex items-center gap-3 mb-3">
-                          <span className="text-2xl">🥡</span>
+                          <div className="relative h-12 w-12 shrink-0">
+                            <Image
+                              src="/bolsa-takeaway.png"
+                              alt="Bolsa take away"
+                              fill
+                              sizes="48px"
+                              className="object-contain drop-shadow-[0_6px_12px_rgba(0,0,0,0.12)]"
+                            />
+                          </div>
                           <div>
                             <p className="font-bold text-primary">Take away</p>
                             <p className="text-sm text-gray-500">{items.length} {items.length === 1 ? 'producto' : 'productos'}</p>

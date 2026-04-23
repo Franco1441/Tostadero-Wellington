@@ -5,7 +5,7 @@ export const STORE_INFO = {
   shortName: 'Tostadero',
   displayName: 'WELLINGTON',
   tagline: 'Café de especialidad',
-  heroKicker: 'coffee oasis',
+  heroKicker: 'La iconica marca',
   description:
     'Café de especialidad tostado artesanalmente. Preparamos cada taza con pasión y una carta pensada para acompañar desayunos, meriendas y antojos de todos los días.',
   address: {
