@@ -69,7 +69,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Cortado',
     price: 6000,
     category: 'con-leche',
-    imagePath: '/products/cortado.png',
+    imagePath: '/products/Cortado.png',
     description: 'Espresso con un poco de leche.',
     badge: 'TAZA M',
   },
@@ -111,7 +111,7 @@ export const menuItems: MenuItem[] = [
     subtitle: 'Machiatto Frío',
     price: 7500,
     category: 'frios',
-    imagePath: '/products/iced latte.png',
+    imagePath: '/products/Iced latte.png',
     description: 'Shot de espresso doble, hielo, shot de sirope de maple y leche espumada.',
   },
   {
