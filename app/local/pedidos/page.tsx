@@ -7,6 +7,15 @@ type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 export const metadata: Metadata = {
   title: 'Panel Local · Pedidos',
   description: 'Vista interna de pedidos para el local.',
+  icons: {
+    icon: [
+      { url: '/local/pedidos/icon.png', sizes: '64x64', type: 'image/png' },
+      { url: '/favicon.ico?v=tostadero-panel-20260429', sizes: 'any' },
+      { url: '/favicon-tostadero-32.png?v=tostadero-panel-20260429', sizes: '32x32', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico?v=tostadero-panel-20260429',
+    apple: '/apple-icon.png?v=tostadero-panel-20260429',
+  },
   robots: {
     index: false,
     follow: false,
