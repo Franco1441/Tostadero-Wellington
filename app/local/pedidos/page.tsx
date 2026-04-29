@@ -9,12 +9,13 @@ export const metadata: Metadata = {
   description: 'Vista interna de pedidos para el local.',
   icons: {
     icon: [
-      { url: '/local/pedidos/icon.png', sizes: '64x64', type: 'image/png' },
-      { url: '/favicon.ico?v=tostadero-panel-20260429', sizes: 'any' },
-      { url: '/favicon-tostadero-32.png?v=tostadero-panel-20260429', sizes: '32x32', type: 'image/png' },
+      { url: '/panel-tostadero-logo.jpg', sizes: '755x755', type: 'image/jpeg' },
+      { url: '/logo-tostadero.jpg', sizes: '755x755', type: 'image/jpeg' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-tostadero-32.png', sizes: '32x32', type: 'image/png' },
     ],
-    shortcut: '/favicon.ico?v=tostadero-panel-20260429',
-    apple: '/apple-icon.png?v=tostadero-panel-20260429',
+    shortcut: '/panel-tostadero-logo.jpg',
+    apple: '/apple-icon.png',
   },
   robots: {
     index: false,
