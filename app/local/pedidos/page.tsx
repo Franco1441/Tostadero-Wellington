@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const dynamic = 'force-dynamic';
+
 const VALID_PAYMENT_STATUSES = new Set<OrderPaymentStatus>([
   'pending_payment',
   'pending',
@@ -46,14 +48,26 @@ export default async function LocalOrdersPage(props: { searchParams: SearchParam
   const filter = takeFirst(searchParams.status) || 'all';
   const key = takeFirst(searchParams.key) || null;
 
-  const orders = await listOrders({
-    limit: 100,
-    paymentStatuses: parseStatuses(filter),
-  });
+  let orders: Awaited<ReturnType<typeof listOrders>> = [];
+  let initialErrorMessage: string | null = null;
+
+  try {
+    orders = await listOrders({
+      limit: 100,
+      paymentStatuses: parseStatuses(filter),
+    });
+  } catch (error) {
+    initialErrorMessage = error instanceof Error ? error.message : 'No se pudieron cargar los pedidos.';
+  }
 
   return (
     <div className="min-h-dvh bg-gradient-to-b from-primary/10 via-background to-background">
-      <LocalOrdersBoard initialOrders={orders} initialFilter={filter} accessKey={key} />
+      <LocalOrdersBoard
+        initialOrders={orders}
+        initialFilter={filter}
+        initialErrorMessage={initialErrorMessage}
+        accessKey={key}
+      />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { RefreshCw } from 'lucide-react';
 interface LocalOrdersBoardProps {
   initialOrders: OrderRecord[];
   initialFilter: string;
+  initialErrorMessage?: string | null;
   accessKey?: string | null;
 }
 
@@ -117,13 +118,18 @@ function formatRelativeTime(timestamp: string) {
   return `hace ${diffDays} d`;
 }
 
-export function LocalOrdersBoard({ initialOrders, initialFilter, accessKey }: LocalOrdersBoardProps) {
+export function LocalOrdersBoard({
+  initialOrders,
+  initialFilter,
+  initialErrorMessage = null,
+  accessKey,
+}: LocalOrdersBoardProps) {
   const [orders, setOrders] = useState<OrderRecord[]>(initialOrders);
   const [activeFilter, setActiveFilter] = useState(initialFilter);
   const [lastUpdated, setLastUpdated] = useState<string>(new Date().toISOString());
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [updatingOrderId, setUpdatingOrderId] = useState<string | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(initialErrorMessage);
 
   const filter = useMemo(
     () => STATUS_FILTERS.find((entry) => entry.id === activeFilter) ?? STATUS_FILTERS[0],
