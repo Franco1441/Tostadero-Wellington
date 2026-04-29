@@ -27,10 +27,11 @@ export const metadata: Metadata = {
   description: STORE_INFO.description,
   icons: {
     icon: [
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-tostadero-32.png', sizes: '32x32', type: 'image/png' },
       { url: '/logo-tostadero.jpg', type: 'image/jpeg' },
     ],
-    shortcut: '/favicon-32x32.png',
+    shortcut: '/favicon.ico',
     apple: '/apple-icon.png',
   },
 }
