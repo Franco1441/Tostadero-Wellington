@@ -118,6 +118,16 @@ function formatRelativeTime(timestamp: string) {
   return `hace ${diffDays} d`;
 }
 
+function getOrdersPanelErrorMessage(error: unknown) {
+  const message = error instanceof Error ? error.message : String(error);
+
+  if (message.toLowerCase().includes('fetch failed') || message.includes('(500)')) {
+    return 'No se pudo conectar con la base de pedidos. El panel está activo, pero todavía no puede sincronizar pedidos.';
+  }
+
+  return message || 'No se pudieron cargar los pedidos.';
+}
+
 export function LocalOrdersBoard({
   initialOrders,
   initialFilter,
@@ -156,26 +166,21 @@ export function LocalOrdersBoard({
         cache: 'no-store',
       });
 
-      if (!response.ok) {
-        throw new Error(`No se pudieron actualizar los pedidos (${response.status}).`);
-      }
-
       const payload = (await response.json()) as {
         orders?: OrderRecord[];
         generatedAt?: string;
         error?: string;
       };
 
-      if (payload.error) {
-        throw new Error(payload.error);
+      if (!response.ok || payload.error) {
+        throw new Error(payload.error ?? `No se pudieron actualizar los pedidos (${response.status}).`);
       }
 
       setOrders(payload.orders ?? []);
       setLastUpdated(payload.generatedAt ?? new Date().toISOString());
       setErrorMessage(null);
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'No se pudieron cargar los pedidos.';
-      setErrorMessage(message);
+      setErrorMessage(getOrdersPanelErrorMessage(error));
     } finally {
       setIsRefreshing(false);
     }

@@ -43,6 +43,16 @@ function parseStatuses(rawStatus: string) {
     .filter((value): value is OrderPaymentStatus => VALID_PAYMENT_STATUSES.has(value as OrderPaymentStatus));
 }
 
+function getOrdersPanelErrorMessage(error: unknown) {
+  const message = error instanceof Error ? error.message : String(error);
+
+  if (message.toLowerCase().includes('fetch failed')) {
+    return 'No se pudo conectar con la base de pedidos. El panel está activo, pero todavía no puede sincronizar pedidos.';
+  }
+
+  return message || 'No se pudieron cargar los pedidos.';
+}
+
 export default async function LocalOrdersPage(props: { searchParams: SearchParams }) {
   const searchParams = await props.searchParams;
   const filter = takeFirst(searchParams.status) || 'all';
@@ -57,7 +67,7 @@ export default async function LocalOrdersPage(props: { searchParams: SearchParam
       paymentStatuses: parseStatuses(filter),
     });
   } catch (error) {
-    initialErrorMessage = error instanceof Error ? error.message : 'No se pudieron cargar los pedidos.';
+    initialErrorMessage = getOrdersPanelErrorMessage(error);
   }
 
   return (
